@@ -1,0 +1,19 @@
+# Dependencias
+node_modules/
+server/node_modules/
+
+# Variables privadas
+.env
+.env.*
+!.env.example
+server/.env
+server/.env.*
+
+# Archivos generados
+dist/
+server/dist/
+
+# Sistema operativo y editor
+.DS_Store
+Thumbs.db
+.vscode/
