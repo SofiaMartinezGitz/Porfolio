@@ -91,7 +91,7 @@ function PomopetDestacado({ alAbrir }) {
       </div>
       <div className="pomopet-mascota">
         {imagenesMascotaPomopet[0] ? (
-          <img loading="lazy" src={imagenesMascotaPomopet[0]} alt="Mascota del proyecto Pomopet" />
+          <img src={imagenesMascotaPomopet[0]} alt="Mascota del proyecto Pomopet" />
         ) : (
           <div className="pomopet-placeholder">
             <span aria-hidden="true">🐾</span>
@@ -119,7 +119,7 @@ function GaleriaImagenes({ imagenes, textoAlternativo }) {
     <div className="galeria-arte">
       {imagenes.map((imagen, indice) => (
         <figure className="obra-arte" key={imagen}>
-          <img loading="lazy" src={imagen} alt={`${textoAlternativo} ${indice + 1}`} />
+          <img src={imagen} alt={`${textoAlternativo} ${indice + 1}`} />
         </figure>
       ))}
     </div>
@@ -139,7 +139,7 @@ function GaleriaVideos({ videos, formato }) {
     <div className={`galeria-videos galeria-${formato}`}>
       {videos.map((video) => (
         <div className="video-tarjeta" key={video}>
-          <video controls preload="none" playsInline>
+          <video controls preload="metadata" playsInline>
             <source src={video} />
             Tu navegador no puede reproducir este video
           </video>
@@ -234,7 +234,7 @@ function App() {
             <a href="#proyectos" className="boton-principal">Mi universo creativo <span>↘</span></a>
           </div>
           <div className="marco-foto-portada">
-            <img loading="lazy" className="imagen-portada" src="/images/hero.png" alt="Composición visual de portada" />
+            <img className="imagen-portada" src="/images/hero.png" alt="Composición visual de portada" />
             
           </div>
           <span className="estrella-portada estrella-uno">✳</span>
@@ -247,7 +247,7 @@ function App() {
         <TituloSeccion>UN POCO SOBRE MÍ</TituloSeccion>
         <div className="sobre-contenido">
           <div className="foto-perfil-marco">
-            <img loading="lazy" className="imagen-perfil" src="/images/profile.png" alt="Retrato de Sofía" />
+            <img className="imagen-perfil" src="/images/profile.png" alt="Retrato de Sofía" />
           </div>
           <div className="sobre-texto">
             <p className="texto-intro">Soy Sofía Martínez, una desarrolladora creativa y artista visual apasionada por la ilustración, el código y el diseño.</p>
@@ -272,7 +272,7 @@ function App() {
               return (
                 <div className="programa-elemento" key={programa.nombre} style={{ "--retraso": `${indice * 0.12}s` }}>
                   <div className="programa-cuadro" title={programa.nombre}>
-                    {logo ? <img loading="lazy" src={logo} alt="" /> : <span>{programa.iniciales}</span>}
+                    {logo ? <img src={logo} alt="" /> : <span>{programa.iniciales}</span>}
                   </div>
                   <small>{programa.nombre}</small>
                 </div>
@@ -331,7 +331,7 @@ function App() {
             ) : null}
           </form>
           <div className="contacto-imagen">
-            <img loading="lazy" className="imagen-contacto" src="/images/apuntando (2).png" alt="Ilustración decorativa" />
+            <img className="imagen-contacto" src="/images/apuntando (2).png" alt="Ilustración decorativa" />
           </div>
         </div>
       </section>
@@ -362,7 +362,7 @@ function App() {
             <div className="contenido-modal-pomopet">
               <div className="pomopet-modal-imagen">
                 {imagenesMascotaPomopet[0] ? (
-                  <img loading="lazy"
+                  <img
                     src={imagenesMascotaPomopet[0]}
                     alt="Mascota de Pomopet"
                   />
@@ -390,7 +390,7 @@ function App() {
           ) : modalActivo.tipo === "sobre" ? (
             <div className="contenido-modal-sobre">
               <div className="historia-perfil">
-                <img loading="lazy" src="/images/profile.png" alt="Sofía Martínez" />
+                <img src="/images/profile.png" alt="Sofía Martínez" />
                 <p>Nacida en Santa Marta, Colombia</p>
               </div>
               <div className="detalles-perfil">
@@ -408,7 +408,7 @@ function App() {
                     return (
                       <a href="#contacto" className="red-social" key={red.nombre}>
                         <span className="red-icono">
-                          {icono ? <img loading="lazy" src={icono} alt="" /> : red.nombre.charAt(0)}
+                          {icono ? <img src={icono} alt="" /> : red.nombre.charAt(0)}
                         </span>
                         <span><strong>{red.nombre}</strong><small>{red.usuario}</small></span>
                         <span className="red-flecha">↗</span>
